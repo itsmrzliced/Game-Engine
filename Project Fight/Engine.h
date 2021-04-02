@@ -5,12 +5,20 @@
 
 #include <iostream>
 #include <string>
+#include <tuple>
+#include <vector>
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
 #include <SDL/SDL_ttf.h.>
 #include <SDL/SDL_mixer.h>
 
+#include "Pieces.h"
+class Pieces;
+#include "Render.h"
+class Render;
+#include "Events.h"
+class Events;
 
 class Engine
 {
@@ -26,10 +34,22 @@ public:
 	int get_width();
 	int get_height();
 	bool get_running();
+	bool mouse_click(SDL_Rect rect, std::tuple<int, int> mouse);
 	bool collision(SDL_Rect rect1, SDL_Rect rect2);
 	bool collision_range(SDL_Rect rect1, SDL_Rect rect2, int x, int y);
 
+	void update(Events* events, Board* board, Engine* engine, Pieces* pieces);
+	void move(Events* events, Board* board, Engine* engine, int index, Pieces* pieces);
+	void capture(Events* events, Board* board, Engine* engine, int move_index, int capture_index, Pieces* pieces);
+	bool check(Engine* engine, std::tuple<int, int> pos, std::string color, int index);
+	std::vector<std::tuple<int, int>> find_legal_moves(Board* board, Events* events);
+
+	void draw();
+
 	void close();
+
+	std::vector<Pieces*> get_pieces();
+	void destroy_piece(int index);
 
 private:
 
@@ -39,6 +59,8 @@ private:
 	int width, height; 
 
 	bool running = true; 
+
+	std::vector<Pieces*> pieces;
 
 };
 

@@ -5,10 +5,16 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include <SDL/SDL.h>
 
 #include "Engine.h"
+#include "Board.h"
+#include "Pieces.h"
+
+class Board;
+class Pieces;
 
 class Render
 {
@@ -18,7 +24,7 @@ public:
 	Render(Engine* engine);
 	~Render();
 
-	void draw(Engine* engine);
+	void draw(Engine* engine, Board* board);
 
 	SDL_Texture* load_texture(Engine* engine, std::string path);
 	

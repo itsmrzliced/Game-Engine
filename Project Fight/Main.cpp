@@ -1,9 +1,15 @@
 #include <iostream>
+#include <string>
+#include <vector>
+#include <tuple>
 
 #include "Engine.h"
 #include "Events.h"
 #include "Render.h"
 #include "Audio.h"
+
+#include "Board.h"
+#include "Pieces.h"
 
 int main(int argc, char** argv) {
 
@@ -13,18 +19,21 @@ int main(int argc, char** argv) {
 	Uint32 frame_start;
 	int frame_time;
 
-	Engine* engine = new Engine(600, 600, "Project Fight");
+	Engine* engine = new Engine(512, 512, "Chess");
 	Events* events = new Events();
 	Render* render = new Render(engine);
 	Audio* audio = new Audio();
-
+	
+	Board* board = new Board(engine, render);
+	
 	while (engine->get_running()) {
 
 		frame_start = SDL_GetTicks();
 
-		render->draw(engine);
+		render->draw(engine, board);
 
-		events->update(engine);
+		for (int i = 0;i < engine->get_pieces().size();i++)
+			events->update(engine, board, engine->get_pieces()[i]);
 
 		frame_time = SDL_GetTicks() - frame_start;
 
@@ -36,11 +45,12 @@ int main(int argc, char** argv) {
 
 	}
 
+	delete board;
 	delete events;
 	delete render; 
 	delete engine; 
 	delete audio; 
-
+	
 	return 0;
 
 }

@@ -6,11 +6,30 @@ Render::Render(Engine* engine) {
 
 }
 
-void Render::draw(Engine* engine) {
+void Render::draw(Engine* engine, Board* board) {
 
 	SDL_RenderClear(engine->get_renderer());
 
+	
 	// Draw 
+	board->draw(engine);
+	for (int i = 0; i < engine->get_pieces().size(); i++) {
+		SDL_SetTextureBlendMode(engine->get_pieces()[i]->texture, SDL_BLENDMODE_BLEND);
+		if (engine->get_pieces()[i]->selected) {
+
+			SDL_SetTextureAlphaMod(engine->get_pieces()[i]->texture, 128);
+
+		}
+		else {
+
+			SDL_SetTextureAlphaMod(engine->get_pieces()[i]->texture, 255);
+
+		}
+		
+	}
+
+	engine->draw();
+	
 
 	SDL_RenderPresent(engine->get_renderer());
 
@@ -19,6 +38,12 @@ void Render::draw(Engine* engine) {
 SDL_Texture* Render::load_texture(Engine* engine, std::string path) {
 
 	SDL_Surface* surface = IMG_Load(path.c_str());
+
+	if (surface == nullptr) {
+
+		std::cout << "Image doesn't exist!" << std::endl; 
+
+	}
 
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(engine->get_renderer(), surface);
 
