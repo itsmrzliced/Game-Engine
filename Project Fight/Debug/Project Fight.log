@@ -1,121 +1,121 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (2D Game Engine.vcxproj, Project Fight.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (2D Game Engine.vcxproj, Project Fight.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Engine.cpp
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(104,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(134,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(157,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(223,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(247,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(291,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(304,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(329,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(356,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(383,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(411,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(453,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(505,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(520,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(550,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(584,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(614,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(645,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(661,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(689,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(742,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(755,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(780,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(807,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(834,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(867,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(882,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(912,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(945,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(974,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1012,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1029,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1054,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1076,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1108,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1136,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1167,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1330,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1356,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1383,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1421,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1501,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1520,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1529,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1547,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1558,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1567,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1584,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1593,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1612,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1626,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1635,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1653,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1662,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1680,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1691,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1700,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1717,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1726,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1754,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1772,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1781,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1801,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1819,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1828,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1848,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1866,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1875,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1894,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1909,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1918,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1943,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1961,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1970,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1988,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(1997,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2006,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2022,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2031,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2050,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2061,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2070,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2087,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2096,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2114,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2123,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2132,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2148,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2157,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2177,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2192,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2201,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2221,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2236,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2245,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2265,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2280,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2289,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2308,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2323,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2332,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2396,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2429,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2449,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2477,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2507,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2538,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2566,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2596,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2639,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2658,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2677,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2696,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2715,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2734,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2753,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\surge\Documents\GitHub\Chess AI\Project Fight\Engine.cpp(2772,24): warning C4018: '<': signed/unsigned mismatch
-  Project Fight.vcxproj -> C:\Users\surge\Documents\GitHub\Chess AI\Debug\Chess AI.exe
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(104,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(134,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(157,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(223,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(247,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(291,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(304,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(329,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(356,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(383,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(411,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(453,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(505,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(520,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(550,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(584,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(614,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(645,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(661,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(689,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(742,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(755,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(780,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(807,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(834,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(867,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(882,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(912,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(945,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(974,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1012,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1029,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1054,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1076,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1108,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1136,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1167,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1330,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1356,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1383,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1421,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1501,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1520,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1529,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1547,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1558,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1567,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1584,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1593,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1612,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1626,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1635,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1653,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1662,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1680,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1691,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1700,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1717,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1726,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1754,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1772,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1781,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1801,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1819,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1828,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1848,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1866,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1875,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1894,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1909,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1918,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1943,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1961,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1970,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1988,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(1997,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2006,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2022,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2031,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2050,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2061,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2070,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2087,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2096,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2114,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2123,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2132,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2148,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2157,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2177,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2192,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2201,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2221,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2236,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2245,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2265,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2280,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2289,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2308,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2323,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2332,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2396,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2429,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2449,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2477,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2508,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2539,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2567,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2598,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2640,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2659,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2678,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2697,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2716,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2735,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2754,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Alex\Documents\GitHub\Game-Engine\Project Fight\Engine.cpp(2773,24): warning C4018: '<': signed/unsigned mismatch
+  Project Fight.vcxproj -> C:\Users\Alex\Documents\GitHub\Game-Engine\Debug\Chess AI.exe

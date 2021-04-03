@@ -2461,9 +2461,9 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 						}
 
 					}
-
-					if (pawn_check1) 
+					if (pawn_check1) {
 						legal_moves.push_back(check_pos1);
+					}
 					if (pawn_check2)
 						legal_moves.push_back(check_pos2);
 
@@ -2503,6 +2503,7 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 					}
 					else {
 
+						pawn_check1 = false;
 						check_pos1 = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos), std::get<1>(this->get_pieces()[i]->pos) - 1);
 						for (int j = 0; j < this->get_pieces().size(); j++) {
 
@@ -2592,6 +2593,7 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 					}
 					else {
 
+						pawn_check1 = false; 
 						check_pos1 = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos), std::get<1>(this->get_pieces()[i]->pos) + 1);
 						for (int j = 0; j < this->get_pieces().size(); j++) {
 
@@ -2788,7 +2790,7 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 			else if (this->get_pieces()[i]->name == "Rook") {
 				
 				// Right
-				for (int k = 0; k < 8; k++) {
+				/*for (int k = 0; k < 8; k++) {
 					for (int j = 0; j < this->get_pieces().size(); j++) {
 
 						std::tuple<int, int> check_pos = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) + k, std::get<1>(this->get_pieces()[i]->pos));
@@ -2824,7 +2826,7 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 							}
 
 						}
-				}
+				}*/
 
 			}
 
