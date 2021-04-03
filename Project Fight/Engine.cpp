@@ -2790,43 +2790,41 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 			else if (this->get_pieces()[i]->name == "Rook") {
 				
 				// Right
-				/*for (int k = 0; k < 8; k++) {
-					for (int j = 0; j < this->get_pieces().size(); j++) {
+				
+				for (int k = 0; k < 8; k++) {
 
-						std::tuple<int, int> check_pos = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) + k, std::get<1>(this->get_pieces()[i]->pos));
+					std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) + k, std::get<1>(this->get_pieces()[i]->pos));
+					if (this->pos_in_range(test)) {
+						for (int j = 0; j < this->get_pieces().size(); j++) {
 
-						if (check_pos == this->get_pieces()[j]->pos && this->get_pieces()[i]->color != this->get_pieces()[j]->color && check_pos != this->get_pieces()[i]->pos) {
+							if (test == this->get_pieces()[j]->pos) {
 
-							legal_moves.push_back(check_pos);
-							goto rook_right_stop;
+								if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
 
-						}
+									legal_moves.push_back(test);
 
-						else if (check_pos )
+								}
 
-					}
-					if (test_pos == engine->get_pieces()[j]->pos && test_pos != engine->get_pieces()[i]->pos) {
+								goto rook_left;
 
-						//std::cout << std::get<0>(check_pos) << ", " << std::get<1>(check_pos) << std::endl;
-						attacked_squares.push_back(check_pos);
-						goto right_stop;
+							}
 
-					}
-					else if (std::get<0>(check_pos) == std::get<0>(engine->get_pieces()[j]->pos) && std::get<1>(check_pos) != std::get<1>(engine->get_pieces()[j]->pos) && test_pos != engine->get_pieces()[i]->pos) {
+							else {
 
-						//std::cout << std::get<0>(check_pos) << ", " << std::get<1>(check_pos) << std::endl;
-						attacked_squares.push_back(check_pos);
-						int counter = 0;
-						for (int h = 0; h < attacked_squares.size(); h++) {
-
-							if (check_pos == attacked_squares[h]) {
-
-								counter += 1;
+								legal_moves.push_back(test);
+								break;
 
 							}
 
 						}
-				}*/
+					}
+
+				}
+
+				// Left 
+				rook_left:
+					std::cout << "";
+
 
 			}
 
@@ -2918,6 +2916,22 @@ bool Engine::collision_range(SDL_Rect rect1, SDL_Rect rect2, int x, int y) {
 	}
 	else
 		return false;
+
+}
+
+bool Engine::pos_in_range(std::tuple<int, int> pos) {
+
+	if (std::get<0>(pos) >= 0 && std::get<0>(pos) <= 7 && std::get<1>(pos) >= 0 && std::get<1>(pos) <= 7) {
+
+		return true; 
+
+	}
+
+	else {
+
+		return false; 
+
+	}
 
 }
 

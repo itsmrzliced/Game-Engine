@@ -44,6 +44,8 @@ public:
 	bool check(Engine* engine, std::tuple<int, int> pos, std::string color, int index);
 	std::vector<std::tuple<int, int>> find_legal_moves(Board* board, Events* events);
 
+	bool pos_in_range(std::tuple<int, int> pos);
+
 	void draw();
 
 	void close();
