@@ -1,5 +1,6 @@
 #include "Engine.h"
 
+
 Engine::Engine(int width, int height, std::string title) {
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
@@ -2412,8 +2413,10 @@ bool Engine::check(Engine* engine, std::tuple<int, int> pos, std::string color, 
 
 }
 
-std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events* events) {
-	
+Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
+
+	struct Piece piece;
+
 	std::vector<std::tuple<int, int>> legal_moves;
 
 	std::string color;
@@ -2455,7 +2458,7 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 						}
 
 						if (check_pos2 == this->get_pieces()[j]->pos && this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
-
+							
 							pawn_check2 = true; 
 
 						}
@@ -2463,9 +2466,15 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 					}
 					if (pawn_check1) {
 						legal_moves.push_back(check_pos1);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+						
 					}
-					if (pawn_check2)
+					if (pawn_check2) {
 						legal_moves.push_back(check_pos2);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 					// Moving 
 
@@ -2491,12 +2500,16 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 						if (!pawn_check1) {
 
 							legal_moves.push_back(check_pos1);
+							piece.color.push_back(this->get_pieces()[i]->color);
+							piece.name.push_back(this->get_pieces()[i]->name);
 
 						}
 
 						if (!pawn_check2 && !pawn_check1) {
 
 							legal_moves.push_back(check_pos2);
+							piece.color.push_back(this->get_pieces()[i]->color);
+							piece.name.push_back(this->get_pieces()[i]->name);
 
 						}
 
@@ -2519,6 +2532,8 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 						if (!pawn_check1) {
 
 							legal_moves.push_back(check_pos1);
+							piece.color.push_back(this->get_pieces()[i]->color);
+							piece.name.push_back(this->get_pieces()[i]->name);
 
 						}
 
@@ -2552,10 +2567,16 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 					}
 
-					if (pawn_check1)
+					if (pawn_check1) {
 						legal_moves.push_back(check_pos1);
-					if (pawn_check2)
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
+					if (pawn_check2) {
 						legal_moves.push_back(check_pos2);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 					// Moving
 
@@ -2581,12 +2602,16 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 						if (!pawn_check1) {
 
 							legal_moves.push_back(check_pos1);
+							piece.color.push_back(this->get_pieces()[i]->color);
+							piece.name.push_back(this->get_pieces()[i]->name);
 
 						}
 
 						if (!pawn_check2 && !pawn_check1) {
 
 							legal_moves.push_back(check_pos2);
+							piece.color.push_back(this->get_pieces()[i]->color);
+							piece.name.push_back(this->get_pieces()[i]->name);
 
 						}
 
@@ -2609,6 +2634,8 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 						if (!pawn_check1) {
 
 							legal_moves.push_back(check_pos1);
+							piece.color.push_back(this->get_pieces()[i]->color);
+							piece.name.push_back(this->get_pieces()[i]->name);
 
 						}
 
@@ -2647,8 +2674,11 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 					}
 
-					if (!test)
+					if (!test) {
 						legal_moves.push_back(check_pos1);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 				}
 
@@ -2666,8 +2696,11 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 					}
 
-					if (!test)
+					if (!test) {
 						legal_moves.push_back(check_pos2);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 				}
 
@@ -2685,8 +2718,11 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 					}
 
-					if (!test)
+					if (!test) {
 						legal_moves.push_back(check_pos3);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 				}
 
@@ -2704,8 +2740,11 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 					}
 
-					if (!test)
+					if (!test) {
 						legal_moves.push_back(check_pos4);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 				}
 
@@ -2723,8 +2762,11 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 					}
 
-					if (!test)
+					if (!test) {
 						legal_moves.push_back(check_pos5);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 				}
 
@@ -2742,8 +2784,11 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 					}
 
-					if (!test)
+					if (!test) {
 						legal_moves.push_back(check_pos6);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 				}
 
@@ -2761,8 +2806,11 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 					}
 
-					if (!test)
+					if (!test) {
 						legal_moves.push_back(check_pos7);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 				}
 
@@ -2779,9 +2827,12 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 						}
 
 					}
-
-					if (!test)
+					
+					if (!test) {
 						legal_moves.push_back(check_pos8);
+						piece.color.push_back(this->get_pieces()[i]->color);
+						piece.name.push_back(this->get_pieces()[i]->name);
+					}
 
 				}
 			
@@ -2801,17 +2852,19 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 								if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
 
-									legal_moves.push_back(test);
+									//legal_moves.push_back(test);
+									//piece.color.push_back(this->get_pieces()[i]->color);
+									//piece.name.push_back(this->get_pieces()[i]->name);
 
 								}
-
-								goto rook_left;
 
 							}
 
 							else {
 
-								legal_moves.push_back(test);
+								//legal_moves.push_back(test);
+								//piece.color.push_back(this->get_pieces()[i]->color);
+								//piece.name.push_back(this->get_pieces()[i]->name);
 								break;
 
 							}
@@ -2821,18 +2874,29 @@ std::vector<std::tuple<int, int>> Engine::find_legal_moves(Board* board, Events*
 
 				}
 
-				// Left 
-				rook_left:
-					std::cout << "";
-
-
 			}
 
 		}
 
 	}
 
-	return legal_moves;
+	// struct Piece piece;
+	piece.pos = legal_moves;
+
+	//for (int i = 0;i < piece.pos.size();i++)
+		//std::cout << std::get<0>(piece.pos[i]) << ", " << std::get<1>(piece.pos[i]) << std::endl;
+
+	//std::cout << piece.pos.size() << std::endl; ;
+	//std::cout << piece.name.size() << std::endl ;
+	//std::cout << piece.color.size() << std::endl; 
+	for (int i = 0; i < piece.pos.size(); i++) {
+
+		std::cout << piece.color[i] << " " << piece.name[i] << std::endl; 
+		std::cout << std::get<0>(piece.pos[i]) << ", " << std::get<1>(piece.pos[i]) << std::endl; 
+
+	}
+
+	return piece;
 
 }
 

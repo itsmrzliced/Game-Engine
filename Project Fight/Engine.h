@@ -28,6 +28,12 @@ public:
 	Engine(int width, int height, std::string title);
 	~Engine();
 
+	struct Piece {
+
+		std::vector<std::tuple<int, int>> pos;
+		std::vector<std::string> name, color;
+
+	};
 	SDL_Window* get_window();
 	SDL_Renderer* get_renderer();
 
@@ -42,7 +48,7 @@ public:
 	void move(Events* events, Board* board, Engine* engine, int index, Pieces* pieces);
 	void capture(Events* events, Board* board, Engine* engine, int move_index, int capture_index, Pieces* pieces);
 	bool check(Engine* engine, std::tuple<int, int> pos, std::string color, int index);
-	std::vector<std::tuple<int, int>> find_legal_moves(Board* board, Events* events);
+	Piece find_legal_moves(Board* board, Events* events);
 
 	bool pos_in_range(std::tuple<int, int> pos);
 

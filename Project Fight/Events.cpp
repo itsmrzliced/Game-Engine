@@ -36,7 +36,7 @@ void Events::update(Engine* engine, Board* board, Pieces* pieces) {
 	}
 
 	if (is_button_triggered(SDL_BUTTON_LEFT)) {
-		
+
 		int x = e.button.x;
 		int y = e.button.y;
 		this->mouse = std::make_tuple(x, y);
@@ -52,12 +52,12 @@ void Events::update(Engine* engine, Board* board, Pieces* pieces) {
 
 		}
 
-		
+
 
 		for (int i = 0; i < engine->get_pieces().size(); i++) {
 
 			if (engine->mouse_click(engine->get_pieces()[i]->dstrect, this->mouse) /*&& color == engine->get_pieces()[i]->get_color() && !engine->get_pieces()[i]->selected*/) {
-				
+
 				if (color == engine->get_pieces()[i]->get_color())
 					piece = i;
 				else
@@ -81,7 +81,7 @@ void Events::update(Engine* engine, Board* board, Pieces* pieces) {
 
 			}
 
-			if (engine->mouse_click(engine->get_pieces()[piece]->dstrect, this->mouse) && color == engine->get_pieces()[piece]->get_color()){
+			if (engine->mouse_click(engine->get_pieces()[piece]->dstrect, this->mouse) && color == engine->get_pieces()[piece]->get_color()) {
 
 				engine->get_pieces()[piece]->selected = true;
 				if (selected != -1)
@@ -94,16 +94,18 @@ void Events::update(Engine* engine, Board* board, Pieces* pieces) {
 
 			}
 
-			
+
 		}
 
 		engine->update(this, board, engine, pieces);
+		engine->find_legal_moves(board, this);
+		//	for (int i = 0; i < engine->find_legal_moves(board, this).size(); i++) {
+		//		
+		//		//std::cout << std::get<0>(engine->find_legal_moves(board, this)[i]) << ", " << std::get<1>(engine->find_legal_moves(board, this)[i]) << std::endl;
+		//	}
+		//	//std::cout << engine->find_legal_moves(board, this).size() << std::endl;
 
-		for (int i = 0; i < engine->find_legal_moves(board, this).size(); i++) {
-			std::cout << std::get<0>(engine->find_legal_moves(board, this)[i]) << ", " << std::get<1>(engine->find_legal_moves(board, this)[i]) << std::endl;
-		}
-		std::cout << engine->find_legal_moves(board, this).size() << std::endl;
-
+		//}
 	}
 
 	if (e.type == SDL_MOUSEMOTION) {
