@@ -58,34 +58,34 @@ Engine::Engine(int width, int height, std::string title) {
 	}
 
 	for (int i = 0; i < 8; i++) {
-		pieces.push_back(new Pieces("Pawn", "White", std::tuple<int, int>(i, 6), this, 1));
-		pieces.push_back(new Pieces("Pawn", "Black", std::tuple<int, int>(i, 1), this, 1));
+		pieces.push_back(new Pieces("Pawn", "White", std::tuple<int, int>(i, 6), this, pieces.size()));
+		pieces.push_back(new Pieces("Pawn", "Black", std::tuple<int, int>(i, 1), this, pieces.size()));
 	}
 	for (int i = 0; i < 2; i++) {
 
-		pieces.push_back(new Pieces("Rook", "White", std::tuple<int, int>(i * 7, 7), this, 5));
-		pieces.push_back(new Pieces("Rook", "Black", std::tuple<int, int>(i * 7, 0), this, 5));
-	}
-
-	for (int i = 0; i < 2; i++) {
-
-		pieces.push_back(new Pieces("Knight", "White", std::tuple<int, int>(i * 5 + 1, 7), this, 3));
-		pieces.push_back(new Pieces("Knight", "Black", std::tuple<int, int>(i * 5 + 1, 0), this, 3));
-
+		pieces.push_back(new Pieces("Rook", "White", std::tuple<int, int>(i * 7, 7), this, pieces.size()));
+		pieces.push_back(new Pieces("Rook", "Black", std::tuple<int, int>(i * 7, 0), this, pieces.size()));
 	}
 
 	for (int i = 0; i < 2; i++) {
 
-		pieces.push_back(new Pieces("Bishop", "White", std::tuple<int, int>(i * 3 + 2, 7), this, 3));
-		pieces.push_back(new Pieces("Bishop", "Black", std::tuple<int, int>(i * 3 + 2, 0), this, 3));
+		pieces.push_back(new Pieces("Knight", "White", std::tuple<int, int>(i * 5 + 1, 7), this, pieces.size()));
+		pieces.push_back(new Pieces("Knight", "Black", std::tuple<int, int>(i * 5 + 1, 0), this, pieces.size()));
 
 	}
 
-	pieces.push_back(new Pieces("Queen", "White", std::tuple<int, int>(3, 7), this, 9));
-	pieces.push_back(new Pieces("Queen", "Black", std::tuple<int, int>(3, 0), this, 9));
+	for (int i = 0; i < 2; i++) {
 
-	pieces.push_back(new Pieces("King", "White", std::tuple<int, int>(4, 7), this, 0));
-	pieces.push_back(new Pieces("King", "Black", std::tuple<int, int>(4, 0), this, 0));
+		pieces.push_back(new Pieces("Bishop", "White", std::tuple<int, int>(i * 3 + 2, 7), this, pieces.size()));
+		pieces.push_back(new Pieces("Bishop", "Black", std::tuple<int, int>(i * 3 + 2, 0), this, pieces.size()));
+
+	}
+
+	pieces.push_back(new Pieces("Queen", "White", std::tuple<int, int>(3, 7), this, pieces.size()));
+	pieces.push_back(new Pieces("Queen", "Black", std::tuple<int, int>(3, 0), this, pieces.size()));
+
+	pieces.push_back(new Pieces("King", "White", std::tuple<int, int>(4, 7), this, pieces.size()));
+	pieces.push_back(new Pieces("King", "Black", std::tuple<int, int>(4, 0), this, pieces.size()));
 
 	//std::cout << pieces[0]->check(this).size() << std::endl; 
 
@@ -2413,12 +2413,11 @@ bool Engine::check(Engine* engine, std::tuple<int, int> pos, std::string color, 
 
 }
 
-Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
+std::vector<Engine::Piece> Engine::find_legal_moves(Board* board, Events* events) {
 
-	struct Piece piece;
-
-	std::vector<std::tuple<int, int>> legal_moves;
-
+	
+	std::vector<struct Piece> legal_moves;
+	//std::vector<std::tuple<int, int>> legal_moves;
 	std::string color;
 
 	if (board->turn % 2 == 1)
@@ -2465,15 +2464,22 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 
 					}
 					if (pawn_check1) {
-						legal_moves.push_back(check_pos1);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos1;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 						
 					}
 					if (pawn_check2) {
-						legal_moves.push_back(check_pos2);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos2;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
+
 					}
 
 					// Moving 
@@ -2499,17 +2505,22 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 						}
 						if (!pawn_check1) {
 
-							legal_moves.push_back(check_pos1);
-							piece.color.push_back(this->get_pieces()[i]->color);
-							piece.name.push_back(this->get_pieces()[i]->name);
+							struct Piece piece;
+							piece.pos = check_pos1;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
 
 						}
 
 						if (!pawn_check2 && !pawn_check1) {
-
-							legal_moves.push_back(check_pos2);
-							piece.color.push_back(this->get_pieces()[i]->color);
-							piece.name.push_back(this->get_pieces()[i]->name);
+							struct Piece piece;
+							piece.pos = check_pos2;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
 
 						}
 
@@ -2531,9 +2542,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 
 						if (!pawn_check1) {
 
-							legal_moves.push_back(check_pos1);
-							piece.color.push_back(this->get_pieces()[i]->color);
-							piece.name.push_back(this->get_pieces()[i]->name);
+							struct Piece piece;
+							piece.pos = check_pos1;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
 
 						}
 
@@ -2568,14 +2582,20 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 
 					if (pawn_check1) {
-						legal_moves.push_back(check_pos1);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos1;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 					if (pawn_check2) {
-						legal_moves.push_back(check_pos2);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos2;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 
 					// Moving
@@ -2600,18 +2620,22 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 
 						}
 						if (!pawn_check1) {
-
-							legal_moves.push_back(check_pos1);
-							piece.color.push_back(this->get_pieces()[i]->color);
-							piece.name.push_back(this->get_pieces()[i]->name);
+							struct Piece piece;
+							piece.pos = check_pos1;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
 
 						}
 
 						if (!pawn_check2 && !pawn_check1) {
-
-							legal_moves.push_back(check_pos2);
-							piece.color.push_back(this->get_pieces()[i]->color);
-							piece.name.push_back(this->get_pieces()[i]->name);
+							struct Piece piece;
+							piece.pos = check_pos2;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
 
 						}
 
@@ -2632,10 +2656,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 						}
 
 						if (!pawn_check1) {
-
-							legal_moves.push_back(check_pos1);
-							piece.color.push_back(this->get_pieces()[i]->color);
-							piece.name.push_back(this->get_pieces()[i]->name);
+							struct Piece piece;
+							piece.pos = check_pos1;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
 
 						}
 
@@ -2675,9 +2701,13 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 
 					if (!test) {
-						legal_moves.push_back(check_pos1);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos1;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
+
 					}
 
 				}
@@ -2697,9 +2727,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 
 					if (!test) {
-						legal_moves.push_back(check_pos2);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos2;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 
 				}
@@ -2719,9 +2752,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 
 					if (!test) {
-						legal_moves.push_back(check_pos3);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos3;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 
 				}
@@ -2741,9 +2777,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 
 					if (!test) {
-						legal_moves.push_back(check_pos4);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos4;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 
 				}
@@ -2763,9 +2802,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 
 					if (!test) {
-						legal_moves.push_back(check_pos5);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos5;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 
 				}
@@ -2785,9 +2827,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 
 					if (!test) {
-						legal_moves.push_back(check_pos6);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos6;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 
 				}
@@ -2807,9 +2852,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 
 					if (!test) {
-						legal_moves.push_back(check_pos7);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos7;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 
 				}
@@ -2829,9 +2877,12 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 					}
 					
 					if (!test) {
-						legal_moves.push_back(check_pos8);
-						piece.color.push_back(this->get_pieces()[i]->color);
-						piece.name.push_back(this->get_pieces()[i]->name);
+						struct Piece piece;
+						piece.pos = check_pos8;
+						piece.color = this->get_pieces()[i]->color;
+						piece.name = this->get_pieces()[i]->name;
+						piece.id = this->get_pieces()[i]->id;
+						legal_moves.push_back(piece);
 					}
 
 				}
@@ -2842,37 +2893,411 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 				
 				// Right
 				
-				for (int k = 0; k < 8; k++) {
+				int right_dist = std::abs(std::get<0>(this->get_pieces()[i]->pos) - 7);
+				int left_dist = std::get<0>(this->get_pieces()[i]->pos);
+				int up_dist = std::get<1>(this->get_pieces()[i]->pos);
+				int down_dist = std::abs(std::get<1>(this->get_pieces()[i]->pos) - 7);
 
-					std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) + k, std::get<1>(this->get_pieces()[i]->pos));
-					if (this->pos_in_range(test)) {
-						for (int j = 0; j < this->get_pieces().size(); j++) {
+				for (int k = 1; k < right_dist + 1; k++) {
 
-							if (test == this->get_pieces()[j]->pos) {
+					for (int j = 0; j < this->get_pieces().size(); j++) {
+						std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) + k, std::get<1>(this->get_pieces()[i]->pos));
+						bool success = true;
+						for (int h = 0; h < legal_moves.size(); h++) {
 
-								if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+							if (test == legal_moves[h].pos) {
 
-									//legal_moves.push_back(test);
-									//piece.color.push_back(this->get_pieces()[i]->color);
-									//piece.name.push_back(this->get_pieces()[i]->name);
-
-								}
-
-							}
-
-							else {
-
-								//legal_moves.push_back(test);
-								//piece.color.push_back(this->get_pieces()[i]->color);
-								//piece.name.push_back(this->get_pieces()[i]->name);
-								break;
+								success = false ;
 
 							}
 
 						}
+
+						if (success) {
+
+							struct Piece piece;
+							piece.pos = test;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
+
+						}
+						if (test == this->get_pieces()[j]->pos) {
+
+							
+							if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+
+								struct Piece piece;
+								piece.pos = test;
+								piece.color = this->get_pieces()[i]->color;
+								piece.name = this->get_pieces()[i]->name;
+								piece.id = this->get_pieces()[i]->id;
+								legal_moves.push_back(piece);
+
+							}
+							
+							goto rook_left;
+
+						}
+
 					}
 
 				}
+
+			rook_left:
+				for (int k = 1; k < left_dist + 1; k++) {
+
+					for (int j = 0; j < this->get_pieces().size(); j++) {
+						std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) - k, std::get<1>(this->get_pieces()[i]->pos));
+						bool success = true;
+						for (int h = 0; h < legal_moves.size(); h++) {
+
+							if (test == legal_moves[h].pos) {
+
+								success = false;
+
+							}
+
+						}
+
+						if (success) {
+
+							struct Piece piece;
+							piece.pos = test;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
+
+						}
+						if (test == this->get_pieces()[j]->pos) {
+
+
+							if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+
+								struct Piece piece;
+								piece.pos = test;
+								piece.color = this->get_pieces()[i]->color;
+								piece.name = this->get_pieces()[i]->name;
+								piece.id = this->get_pieces()[i]->id;
+								legal_moves.push_back(piece);
+
+							}
+
+							goto rook_up;
+
+						}
+
+					}
+
+				}
+
+			rook_up:
+				for (int k = 1; k < up_dist; k++) {
+
+					for (int j = 0; j < this->get_pieces().size(); j++) {
+						std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos), std::get<1>(this->get_pieces()[i]->pos) - k);
+						bool success = true;
+						for (int h = 0; h < legal_moves.size(); h++) {
+
+							if (test == legal_moves[h].pos) {
+
+								success = false;
+
+							}
+
+						}
+
+						if (success) {
+
+							struct Piece piece;
+							piece.pos = test;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
+
+						}
+						if (test == this->get_pieces()[j]->pos) {
+
+
+							if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+
+								struct Piece piece;
+								piece.pos = test;
+								piece.color = this->get_pieces()[i]->color;
+								piece.name = this->get_pieces()[i]->name;
+								piece.id = this->get_pieces()[i]->id;
+								legal_moves.push_back(piece);
+
+							}
+
+							goto rook_down;
+
+						}
+
+					}
+
+				}
+			rook_down:
+				for (int k = 1; k < down_dist + 1; k++) {
+
+					for (int j = 0; j < this->get_pieces().size(); j++) {
+						std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos), std::get<1>(this->get_pieces()[i]->pos) + k);
+						bool success = true;
+						for (int h = 0; h < legal_moves.size(); h++) {
+
+							if (test == legal_moves[h].pos) {
+
+								success = false;
+
+							}
+
+						}
+
+						if (success) {
+
+							struct Piece piece;
+							piece.pos = test;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
+
+						}
+						if (test == this->get_pieces()[j]->pos) {
+
+
+							if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+
+								struct Piece piece;
+								piece.pos = test;
+								piece.color = this->get_pieces()[i]->color;
+								piece.name = this->get_pieces()[i]->name;
+								piece.id = this->get_pieces()[i]->id;
+								legal_moves.push_back(piece);
+
+							}
+
+							goto rook_finish;
+
+						}
+
+					}
+
+				}
+
+			rook_finish:
+				std::cout << "";
+
+			}
+			else if (this->get_pieces()[i]->name == "Bishop") {
+
+				int right_dist = std::abs(std::get<0>(this->get_pieces()[i]->pos) - 7);
+				int left_dist = std::abs(std::get<1>(this->get_pieces()[i]->pos));
+				for (int k = 1; k < right_dist + 1; k++) {
+
+					for (int j = 0; j < this->get_pieces().size(); j++) {
+						// Up Right
+						std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) + k, std::get<1>(this->get_pieces()[i]->pos) - k);
+
+						bool success = true;
+						//for (int h = 0; h < legal_moves.size(); h++) {
+
+						//	if (test == legal_moves[h].pos && this->get_pieces()[i]->id == legal_moves[h].id) {
+						//		//std::cout << std::get<0>(legal_moves[h].pos) << ", " << std::get<1>(legal_moves[h].pos) << std::endl;
+
+						//		success = false;
+
+						//	}
+
+						//}
+
+						if (success) {
+
+							struct Piece piece;
+							piece.pos = test;
+							piece.color = this->get_pieces()[i]->color;
+							piece.name = this->get_pieces()[i]->name;
+							piece.id = this->get_pieces()[i]->id;
+							legal_moves.push_back(piece);
+
+						}
+						if (test == this->get_pieces()[j]->pos) {
+
+
+							if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+
+								struct Piece piece;
+								piece.pos = test;
+								piece.color = this->get_pieces()[i]->color;
+								piece.name = this->get_pieces()[i]->name;
+								piece.id = this->get_pieces()[i]->id;
+								legal_moves.push_back(piece);
+
+							}
+
+							goto bishop_up_left;
+
+						}
+
+					}
+
+				}
+
+			bishop_up_left:
+
+				for (int k = 1; k < left_dist + 1; k++) {
+
+					for (int j = 0; j < this->get_pieces().size(); j++) {
+						std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) - k, std::get<1>(this->get_pieces()[i]->pos) - k);
+						bool success = true;
+						for (int h = 0; h < legal_moves.size(); h++) {
+
+							if (test == legal_moves[h].pos) {
+
+								success = false;
+
+							}
+
+						}
+
+						if (success) {
+
+							/*legal_moves.push_back(test);
+							piece.name.push_back(this->get_pieces()[i]->name);
+							piece.color.push_back(this->get_pieces()[i]->color);*/
+
+						}
+						if (test == this->get_pieces()[j]->pos) {
+
+
+							if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+
+								struct Piece piece;
+								piece.pos = test;
+								piece.color = this->get_pieces()[i]->color;
+								piece.name = this->get_pieces()[i]->name;
+								piece.id = this->get_pieces()[i]->id;
+								//legal_moves.push_back(piece);
+
+							}
+
+							goto bishop_down_right;
+
+						}
+
+					}
+
+				}
+
+			bishop_down_right:
+				for (int k = 1; k < right_dist + 1; k++) {
+
+					for (int j = 0; j < this->get_pieces().size(); j++) {
+						std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) + k, std::get<1>(this->get_pieces()[i]->pos) + k);
+						bool success = true;
+						for (int h = 0; h < legal_moves.size(); h++) {
+
+							if (test == legal_moves[h].pos) {
+
+								success = false;
+
+							}
+
+						}
+
+						if (success) {
+
+							/*legal_moves.push_back(test);
+							piece.name.push_back(this->get_pieces()[i]->name);
+							piece.color.push_back(this->get_pieces()[i]->color);*/
+
+						}
+						if (test == this->get_pieces()[j]->pos) {
+
+
+							if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+
+								struct Piece piece;
+								piece.pos = test;
+								piece.color = this->get_pieces()[i]->color;
+								piece.name = this->get_pieces()[i]->name;
+								piece.id = this->get_pieces()[i]->id;
+								//legal_moves.push_back(piece);
+
+							}
+
+							goto bishop_down_left;
+
+						}
+
+					}
+
+				}
+
+			bishop_down_left:
+
+				for (int k = 1; k < right_dist + 1; k++) {
+
+					for (int j = 0; j < this->get_pieces().size(); j++) {
+						std::tuple<int, int> test = std::make_tuple(std::get<0>(this->get_pieces()[i]->pos) - k, std::get<1>(this->get_pieces()[i]->pos) + k);
+						bool success = true;
+						for (int h = 0; h < legal_moves.size(); h++) {
+
+							if (test == legal_moves[h].pos) {
+
+								success = false;
+
+							}
+
+						}
+
+						if (success) {
+
+							/*legal_moves.push_back(test);
+							piece.name.push_back(this->get_pieces()[i]->name);
+							piece.color.push_back(this->get_pieces()[i]->color);*/
+
+						}
+						if (test == this->get_pieces()[j]->pos) {
+
+
+							if (this->get_pieces()[i]->color != this->get_pieces()[j]->color) {
+
+								struct Piece piece;
+								piece.pos = test;
+								piece.color = this->get_pieces()[i]->color;
+								piece.name = this->get_pieces()[i]->name;
+								piece.id = this->get_pieces()[i]->id;
+								//legal_moves.push_back(piece);
+
+							}
+
+							goto bishop_finish;
+
+						}
+
+					}
+
+				}
+			bishop_finish:
+				std::cout << "";
+			}
+
+		
+
+		}
+
+	}
+	for (int i = 0; i < this->get_pieces().size(); i++) {
+
+		for (int j = 0; j < legal_moves.size(); j++) {
+
+			if (!pos_in_range(legal_moves[j].pos)) {
+
+				legal_moves.erase(legal_moves.begin() + j);
 
 			}
 
@@ -2880,23 +3305,33 @@ Engine::Piece Engine::find_legal_moves(Board* board, Events* events) {
 
 	}
 
-	// struct Piece piece;
-	piece.pos = legal_moves;
+	for (int i = 0; i < this->get_pieces().size(); i++) {
+		for (int j = 0; j < legal_moves.size(); j++) {
+
+			if (this->get_pieces()[i]->pos == legal_moves[j].pos && this->get_pieces()[i]->color == legal_moves[j].color) {
+
+				legal_moves.erase(legal_moves.begin() + j);
+
+				break;
+
+			}
+
+		}
+	}
 
 	//for (int i = 0;i < piece.pos.size();i++)
 		//std::cout << std::get<0>(piece.pos[i]) << ", " << std::get<1>(piece.pos[i]) << std::endl;
+	
+	for (int i = 0; i < legal_moves.size(); i++) {
 
-	//std::cout << piece.pos.size() << std::endl; ;
-	//std::cout << piece.name.size() << std::endl ;
-	//std::cout << piece.color.size() << std::endl; 
-	for (int i = 0; i < piece.pos.size(); i++) {
-
-		std::cout << piece.color[i] << " " << piece.name[i] << std::endl; 
-		std::cout << std::get<0>(piece.pos[i]) << ", " << std::get<1>(piece.pos[i]) << std::endl; 
+		std::cout << legal_moves[i].name << std::endl; 
+		std::cout << std::get<0>(legal_moves[i].pos) << ", " << std::get<1>(legal_moves[i].pos) << std::endl;
 
 	}
+	std::cout << legal_moves.size() << std::endl;
 
-	return piece;
+
+	return legal_moves;
 
 }
 

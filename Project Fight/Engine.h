@@ -7,6 +7,7 @@
 #include <string>
 #include <tuple>
 #include <vector>
+#include <map>
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
@@ -30,8 +31,16 @@ public:
 
 	struct Piece {
 
-		std::vector<std::tuple<int, int>> pos;
-		std::vector<std::string> name, color;
+		std::tuple<int, int> pos;
+		std::string name, color;
+		int id;
+
+	};
+
+	struct RookMove {
+
+		std::tuple<int, int> pos;
+		std::string name, color;
 
 	};
 	SDL_Window* get_window();
@@ -48,7 +57,8 @@ public:
 	void move(Events* events, Board* board, Engine* engine, int index, Pieces* pieces);
 	void capture(Events* events, Board* board, Engine* engine, int move_index, int capture_index, Pieces* pieces);
 	bool check(Engine* engine, std::tuple<int, int> pos, std::string color, int index);
-	Piece find_legal_moves(Board* board, Events* events);
+	std::vector<Piece> find_legal_moves(Board* board, Events* events);
+	RookMove find_rook_moves(int index);
 
 	bool pos_in_range(std::tuple<int, int> pos);
 

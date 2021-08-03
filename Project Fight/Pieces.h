@@ -24,7 +24,7 @@ class Pieces
 
 public:
 
-	Pieces(std::string name, std::string color, std::tuple<int, int> pos, Engine* engine, int score);
+	Pieces(std::string name, std::string color, std::tuple<int, int> pos, Engine* engine, int id);
 	~Pieces();
 
 	std::tuple<int, int> get_coords(std::tuple<int, int> pos);
@@ -60,6 +60,8 @@ public:
 	bool black_rook_a_first_move = true;
 	bool black_rook_h_first_move = true;
 	bool in_check = false;
+
+	int id;
 
 
 private:
